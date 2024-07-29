@@ -71,3 +71,6 @@ gem 'dotenv-rails'
 
 # 設定
 gem 'config'
+
+gem 'cssbundling-rails'
+gem 'jsbundling-rails'
