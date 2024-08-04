@@ -1,3 +1,4 @@
+<%= turbo_frame_tag dom_id(user) do %>
 <%= form_with(model: user) do |form| %>
   <% if user.errors.any? %>
     <div style="color: red">
@@ -22,6 +23,16 @@
   </div>
 
   <div>
+    <%= form.label :user_strengths, style: "display: block" %>
+    <%= form.fields_for :user_strengths do |subform| %>
+      <%= render partial: "user_strengths/form", locals: {form: subform} %>
+    <% end %>
+    <%= turbo_frame_tag 'new_user_strengths' %>
+    <%= link_to t('btn.add'), new_user_strength_path(user_id: user.id), data: {turbo: true, turbo_stream: true}, class: "btn btn-primary rounded-md" %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
+<% end %>
 <% end %>

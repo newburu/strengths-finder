@@ -1,0 +1,24 @@
+ja:
+  menu:
+    list: サービス
+    user: ユーザー
+    static_pages:
+      info: このサイトについて
+      privacy: プライバシーポリシー
+      terms: 利用規約
+      faq: よくある質問
+  users:
+    index:
+      title: ユーザーリスト
+      btn:
+        new: ユーザーを追加する
+        show: このユーザーを見る
+    new:
+      title: ユーザーを追加
+    show:
+      title: ユーザー
+      btn:
+        edit: このユーザーを編集する
+        destroy: このユーザーを削除する
+    edit:
+      title: ユーザーを修正

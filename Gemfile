@@ -74,3 +74,12 @@ gem 'config'
 
 gem 'cssbundling-rails'
 gem 'jsbundling-rails'
+
+# i18n
+gem 'rails-i18n'
+group :development do
+  gem 'i18n-debug'
+end
+
+# CSV
+gem 'csv'

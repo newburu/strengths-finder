@@ -1,0 +1,11 @@
+<% index ||= nil %>
+<%= turbo_frame_tag dom_id(form.object, index) do %>
+  <p>
+    <%= form.hidden_field :id %>
+    <%= form.hidden_field :user_id %>
+    <%= form.label :no %>
+    <%= form.select :no, 1..34, {}, class: "input input-bordered rounded-md" %>
+    <%= form.collection_select :strength_id, Strength.all, :id, :name_ja, {},  class: "input input-bordered rounded-md" %>
+    <%= link_to t('btn.destroy'), user_strength_path(form.object.id||0), data: { turbo_method: :delete, turbo_confirm: t('confirm.destroy'), turbo: true, turbo_stream: true}, class: "btn btn-warning rounded-md" %>
+  </p>
+<% end %>

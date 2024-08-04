@@ -1,0 +1,9 @@
+<%= form_with(model: User.new, id:"STRENGTH") do |form| %>
+  <%= turbo_stream.append 'new_user_strengths' do %>
+    <%= form.fields_for :user_strengths, UserStrength.new, child_index: @index do |subform| %>
+      <%= render partial: "user_strengths/form", locals: {form: subform, index: @index} %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<%= turbo_stream.remove 'STRENGTH' %>
