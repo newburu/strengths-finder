@@ -83,3 +83,11 @@ end
 
 # CSV
 gem 'csv'
+
+# ページング
+gem "kaminari"
+
+# テストデータ
+group :development, :test do
+  gem 'faker'
+end

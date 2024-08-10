@@ -14,6 +14,7 @@ ja:
   btn:
     new: 新規
     add: 追加
+    show: 参照
     edit: 編集
     destroy: 削除
     back: 戻る
