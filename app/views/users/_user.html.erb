@@ -1,36 +1,34 @@
-<div id="<%= dom_id user %>">
-  <div>
-    <%= label_tag :code %>
-    <%= user.code %>
-  </div>
+<div id="<%= dom_id user %>" class="card bg-base-100 w-96 shadow-xl">
+  <div class="card-body">
+    <h2 class="card-title"><%= user.code %></h2>
+    <h2 class="card-title"><%= user.name %></h2>
 
-  <div>
-    <strong>Name:</strong>
-    <%= user.name %>
-  </div>
+    <%= label_tag :strengths %>
+    <div class="overflow-x-auto">
+      <table class="table table-zebra">
+      <thead>
+        <tr>
+          <th><%= t("activerecord.attributes.user_strength.no") %></th>
+          <th><%= t("activerecord.attributes.user_strength.strength") %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%- user.user_strengths.each do |user_strength| %>
+        <tr class="hover">
+          <th>
+            <%= user_strength.no %>
+          </th>
+          <td>
+            <%= user_strength.strength.name_ja %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+      </table>
+    </div>
 
-  <%= label_tag :strengths %>
-  <div class="overflow-x-auto">
-    <table class="table table-zebra">
-    <thead>
-      <tr>
-        <th><%= t("activerecord.attributes.user_strength.no") %></th>
-        <th><%= t("activerecord.attributes.user_strength.strength") %></th>
-      </tr>
-    </thead>
-    <tbody>
-      <%- user.user_strengths.each do |user_strength| %>
-      <tr class="hover">
-        <th>
-          <%= user_strength.no %>
-        </th>
-        <td>
-          <%= user_strength.strength.name_ja %>
-        </td>
-      </tr>
-      <% end %>
-    </tbody>
-    </table>
+    <div class="card-actions justify-end">
+      <%= link_to t('btn.show'), user, class: "btn btn-primary", data: { turbo: false } %>
+    </div>
   </div>
-
 </div>
