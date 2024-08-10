@@ -1,0 +1,36 @@
+<%= form_with(model: user) do |form| %>
+  <% if user.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :code, style: "display: block" %>
+    <%= form.text_field :code %>
+  </div>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :user_strengths, style: "display: block" %>
+    <%= form.fields_for :user_strengths do |subform| %>
+      <%= render partial: "user_strengths/form", locals: {form: subform} %>
+    <% end %>
+    <%= turbo_frame_tag 'new_user_strengths' %>
+    <%= link_to t('btn.add'), new_user_strength_path(user_id: user.id), data: {turbo: true, turbo_stream: true}, class: "btn btn-primary rounded-md" %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

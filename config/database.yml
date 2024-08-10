@@ -14,8 +14,8 @@ default: &default
   encoding: utf8mb4
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
-  password:
-  socket: /tmp/mysql.sock
+  password: <%= ENV["DATABASE_PASSWORD"] %>
+  socket: <%= ENV["DATABASE_SOCK_PATH"] %>
 
 development:
   <<: *default
@@ -51,5 +51,6 @@ test:
 production:
   <<: *default
   database: strengths_finder_production
-  username: strengths_finder
-  password: <%= ENV["STRENGTHS_FINDER_DATABASE_PASSWORD"] %>
+  username: <%= ENV["DATABASE_USER"] %>
+  password: <%= ENV["DATABASE_PASSWORD"] %>
+  socket: <%= ENV["DATABASE_SOCK_PATH"] %>
