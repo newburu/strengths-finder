@@ -8,6 +8,9 @@ ja:
           name: 名前
           user_strengths: ストレングスファインダー
           comment: コメント
+        user_strength:
+          "no": "No"
+          strength: 資質
   attributes:
     created_at: 作成日
     updated_at: 更新日
