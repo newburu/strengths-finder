@@ -338,7 +338,7 @@ DEPENDENCIES
   jsbundling-rails
   kaminari
   mysql2 (~> 0.5)
-  puma (>= 5.0)
+  puma (>= 6.0)
   rails (~> 7.2.0, >= 7.2.0.0)
   rails-i18n
   selenium-webdriver
