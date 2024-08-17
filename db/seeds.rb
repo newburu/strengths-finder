@@ -7,7 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-require 'CSV'
+require 'csv'
 
 def upsert_seeds(model:)
   now = Time.zone.now
@@ -21,13 +21,5 @@ end
 
 upsert_seeds(model: Strength)
 
-100.times do |i|
-  name = Faker::Internet.username
-  user = User.new(code: name, name: name)
-  strengths = Strength.all.sample(5)
-  (1..5).each do |no|
-    strength = UserStrength.new(no: no, user: user, strength: strengths[no-1])
-    user.user_strengths << strength
-  end
-  user.save!
-end
+# 環境別にseed ファイルを読み込む
+load(Rails.root.join("db", "seeds", "#{Rails.env.downcase}.rb"))

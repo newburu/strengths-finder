@@ -12,7 +12,7 @@ gem "sprockets-rails"
 gem "mysql2", "~> 0.5"
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem "puma", ">= 5.0"
+gem "puma", ">= 6.0"
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
@@ -90,4 +90,16 @@ gem "kaminari"
 # テストデータ
 group :development, :test do
   gem 'faker'
+end
+
+# デプロイ
+group :development do
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano3-puma'
+  gem 'ed25519' 
+  gem 'bcrypt_pbkdf'
+  gem 'sshkit-sudo'
 end
