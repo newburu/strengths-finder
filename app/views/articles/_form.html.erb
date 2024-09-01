@@ -22,11 +22,6 @@
   </div>
 
   <div>
-    <%= form.label :creator_id, style: "display: block" %>
-    <%= form.collection_select :creator_id, User.all, :id, :name, {},  class: "input input-bordered rounded-md" %>
-  </div>
-
-  <div>
     <%= form.submit %>
   </div>
 <% end %>
