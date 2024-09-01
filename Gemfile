@@ -103,3 +103,11 @@ group :development do
   gem 'bcrypt_pbkdf'
   gem 'sshkit-sudo'
 end
+
+# SSO
+gem 'devise'
+gem 'devise-i18n'
+gem 'omniauth'
+gem 'devise-i18n'
+gem 'omniauth-github'
+gem 'omniauth-google-oauth2'
