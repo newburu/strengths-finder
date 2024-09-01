@@ -14,7 +14,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_08_18_024057) do
   create_table "articles", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title"
     t.text "content"
-    t.bigint "creator_id", null: false
+    t.bigint "creator_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["creator_id"], name: "index_articles_on_creator_id"
