@@ -1,2 +1,8 @@
 <header>
+  <%- if user_signed_in? %>
+    <%= link_to "#{current_user.name}さん", class: "link" %>
+    <%= link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete } %>
+  <%- else %>
+    <%= button_to "Googleでログイン", user_google_oauth2_omniauth_authorize_path, method: :post, data: {turbo: "false"} %>
+  <%- end %>
 </header>
