@@ -15,4 +15,10 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   root "users#index"
+
+  # 静的ページ
+  get 'static_pages/info'
+  get 'static_pages/terms'
+  get 'static_pages/privacy'
+  get 'static_pages/faq'
 end
