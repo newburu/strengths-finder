@@ -8,6 +8,8 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <script src="https://kit.fontawesome.com/<%= ENV["FONTAWESOME_ID"] %>.js" crossorigin="anonymous" />
+
     <%= render 'shared/adsense' %>
     <%= render 'shared/analytics' %>
   </head>
