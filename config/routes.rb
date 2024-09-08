@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "portals/index"
   devise_for :users, controllers: { 
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
@@ -14,7 +15,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  root "users#index"
+  root 'portals#index'
 
   # 静的ページ
   get 'static_pages/info'
