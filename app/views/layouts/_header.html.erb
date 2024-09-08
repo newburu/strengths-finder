@@ -15,7 +15,7 @@
                 <%= link_to t('menu.user'), users_path, class: "link link-hover" %>
               </li>
               <li>
-                <%= link_to t('menu.articles'), articles_path, class: "link link-hover" %>
+                <%= link_to t('menu.article'), articles_path, class: "link link-hover" %>
               </li>
             </ul>
           </details>
@@ -74,7 +74,7 @@
             <%= link_to t('menu.user'), users_path, class: "link link-hover" %>
           </li>
           <li class="p-3">
-            <%= link_to t('menu.articles'), articles_path, class: "link link-hover" %>
+            <%= link_to t('menu.article'), articles_path, class: "link link-hover" %>
           </li>
           <li class="p-3">
           <%- if user_signed_in? %>
