@@ -9,19 +9,19 @@
           <hr>
         <% end %>
         <li class="p-2">
-          <div class="flex flex-row.p-1">
+          <div class="flex flex-row p-1">
             <div class="indicator">
               <span class="indicator-item">
                 <%= image_tag "icon/new.gif" if article.new? %>
               </span>
-            </div>
-            <div class="title p-1 pl-2">
-              <div class="flex flex-col">
-                <%= link_to article.title, article, class: "link link-primary align-bottom" %>
+              <div class="title p-1 pl-2">
+                <div class="flex flex-col">
+                  <%= link_to article.title, article, class: "link link-primary align-bottom" %>
+                </div>
               </div>
             </div>
           </div>
-          <div class="fiel flex-row p-1">
+          <div class="flex flex-row p-1">
             <div class="flex flex-col">
               <div class="article-owner text-xs">
                 <%= "投稿者：#{article.creator.name}さん" %>

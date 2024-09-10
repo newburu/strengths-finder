@@ -11,4 +11,10 @@ module.exports = {
   daisyui: {
     themes: ["dark", "cupcake"],
   },
+  theme: {
+    container: {
+      center: true, // 中央寄せにする
+      padding: '2rem', // パディングを追加する
+    },
+  },
 }
