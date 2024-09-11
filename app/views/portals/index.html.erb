@@ -1,6 +1,6 @@
 <% if @new_articles.present? %>
   <div class="new-articles">
-    <h1 class="text-lg font-extrabold">
+    <h1 class="text-lg font-extrabold fukidashi">
       新着記事
     </h1>
     <ul>
@@ -36,3 +36,56 @@
     </ul>
   </div>
 <% end %>
+
+<div class="how_to">
+  <div>
+    <h1 class="text-lg font-extrabold fukidashi">
+      <%= Settings.system[:title] %>とは
+    </h1>
+    <p style="margin-bottom: 1.2rem">ストレングスファインダーの資質に関する<span class="highlight">「あるある」を投稿する</span>ためのサービスです。</p>
+    <div class="flex justify-center">
+      <% unless user_signed_in? %>
+        <%= link_to 'さっそく登録/ログインする！', user_google_oauth2_omniauth_authorize_path, class: "btn btn-primary btn-width50-center" %>
+      <% end %>
+    </div>
+    <div class="flex justify-center">
+      <%= image_tag "top.png", width: '50%' %>
+    </div>
+    <p><%= Settings.system[:title] %>に、あなたのあるあるを登録して、みんなと共有しましょう。</p>
+  </div>
+
+  <div>
+    <h2 class="text-base font-extrabold check">
+      例えばこんな場面で
+    </h2>
+    <ul>
+      <li>
+        あれ？これって資質が関係しているのでは？
+        <div class="flex justify-center">
+          <%= image_tag 'remember.png', size: '200x200', alt: '例えば' %>
+        </div>
+      </li>
+      <li>
+        あの人の行動、この資質っぽい
+        <div class="flex justify-center">
+          <%= image_tag 'surprised.png', size: '160x160', alt: '例えば' %>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <h2 class="text-base font-extrabold check">
+      <%= Settings.system[:title] %>には<br class="md:hidden">こんな効果があるかもしれません
+    </h2>
+    <ul class="check">
+      <li>あるあるを登録する = 貯めることで<span class="highlight">あなただけのストック</span>になるかもしれません</li>
+      <li>いいねやRTをもらうと<span class="highlight">やる気がアップする</span>かもしれません。</li>
+      <li><span class="highlight">Xにポストすると、共感</span>が得られるかもしれません。</li>
+      <li>誰かのあるあるを見ることで、<span class="highlight">新しい発見につながるかも</span>しれません。</li>
+    </ul>
+  </div>
+  <% unless user_signed_in? %>
+    <%= link_to 'さっそく登録/ログインする！', user_google_oauth2_omniauth_authorize_path, class: "btn btn-primary btn-width50-center" %>
+  <% end %>
+</div>
