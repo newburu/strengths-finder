@@ -55,6 +55,7 @@
           </details>
         <%- else %>
           <%= button_to "Googleでログイン", user_google_oauth2_omniauth_authorize_path, method: :post, data: {turbo: "false"} %>
+          <%= button_to 'Twitterでログイン', user_twitter_omniauth_authorize_path, method: :post, data: {turbo: "false"} %>
         <%- end %>
         </li>
       </ul>
