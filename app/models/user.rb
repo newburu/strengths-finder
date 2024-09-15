@@ -6,6 +6,9 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: %i[twitter google_oauth2]
   validates :uid, uniqueness: { scope: :provider }
 
+  # ロール
+  enum role: { normal: 0, admin: 1 }
+
   has_many :user_strengths, -> {order(:no)}, dependent: :destroy
   accepts_nested_attributes_for :user_strengths, allow_destroy: true
   has_many :strengths, through: :user_strengths

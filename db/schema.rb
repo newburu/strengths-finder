@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_08_18_024057) do
+ActiveRecord::Schema[7.2].define(version: 2024_09_15_021002) do
   create_table "articles", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title"
     t.text "content"
@@ -61,6 +61,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_08_18_024057) do
     t.string "access_token"
     t.string "access_token_secret"
     t.string "image"
+    t.integer "role"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
