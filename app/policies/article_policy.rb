@@ -16,7 +16,7 @@ class ArticlePolicy < ApplicationPolicy
   end
 
   def update?
-    record.creator == user || user.try(:admin?)
+    record.creator.nil? || record.creator == user || user.try(:admin?)
   end
 
   def edit?
