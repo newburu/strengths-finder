@@ -4,7 +4,7 @@ class Article < ApplicationRecord
   # NEW表示しておく日数
   NEW_INTERVAL_DAY = 7.days
 
-  scope :open_post, -> (user) {where(secret: false).or(Article.where(creator: user)).order(created_at: :desc)}
+  scope :open_post, -> (user) {where(open: true).or(Article.where(creator: user)).order(created_at: :desc)}
   scope :new_post, -> (user) {open_post(user).where(created_at: (DateTime.now - NEW_INTERVAL_DAY)...)}
 
 

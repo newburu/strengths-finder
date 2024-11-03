@@ -15,7 +15,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_25_130848) do
     t.string "title"
     t.text "content"
     t.bigint "creator_id"
-    t.boolean "secret", default: false
+    t.boolean "open", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["creator_id"], name: "index_articles_on_creator_id"

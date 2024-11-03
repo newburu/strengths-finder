@@ -15,7 +15,7 @@ ja:
         article:
           title: タイトル
           content: コンテンツ
-          secret: 公開
+          open: 公開
           user: 作成者
   attributes:
     created_at: 作成日
