@@ -3,6 +3,6 @@ class PortalsController < ApplicationController
 
   def index
     # 新着情報
-    @new_articles = Article.all.order(created_at: :desc).limit(5)
+    @new_articles = Article.new_post(current_user)
   end
 end

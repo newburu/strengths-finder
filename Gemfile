@@ -112,3 +112,6 @@ gem 'devise-i18n'
 gem 'omniauth-github'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-twitter'
+
+# 認可
+gem 'pundit'

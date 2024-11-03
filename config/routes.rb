@@ -3,6 +3,11 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { 
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
+  # rootをログイン画面に設定
+  devise_scope :user do
+    root 'portals#index'
+  end
+
   resources :articles
   resources :users
   resources :user_strengths
@@ -15,7 +20,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  root 'portals#index'
 
   # 静的ページ
   get 'static_pages/info'

@@ -1,3 +1,4 @@
+<script src="https://accounts.google.com/gsi/client" async defer></script>
 <% if @new_articles.present? %>
   <div class="new-articles">
     <h1 class="text-lg font-extrabold fukidashi">
@@ -24,7 +25,7 @@
           <div class="flex flex-row p-1">
             <div class="flex flex-col">
               <div class="article-owner text-xs">
-                <%= "投稿者：#{article.creator.name}さん" %>
+                <%= "投稿者：#{article.creator_name}さん" %>
               </div>
               <div class="article-created text-xs">
                 <%= "投稿日：#{ l article.created_at}" %>
@@ -45,8 +46,18 @@
     <p style="margin-bottom: 1.2rem">ストレングスファインダーの資質に関する<span class="highlight">「あるある」を投稿する</span>ためのサービスです。</p>
     <div class="flex justify-center">
       <% unless user_signed_in? %>
-        <%= link_to 'さっそく登録/ログインする！(Google)', user_google_oauth2_omniauth_authorize_path, class: "btn btn-primary btn-width50-center" %>
-        <%= link_to 'さっそく登録/ログインする！(X)', user_twitter_omniauth_authorize_path, class: "btn btn-primary btn-width50-center" %>
+        <div class="flex flex-col">
+          <div class="flex justify-center">
+            <%= link_to user_google_oauth2_omniauth_authorize_path do %>
+              <%= image_tag "web_light_rd_SI@1x" %>
+            <% end %>
+          </div>
+          <div class="flex justify-center">
+            <%= link_to user_twitter_omniauth_authorize_path, class: "btn btn-width50-center rounded-full bg-white text-black hover:bg-white" do %>
+              <%= image_tag "x-logo-black", size: "20x20" %>Sign in with X
+            <% end %>
+          </div>
+        </div>
       <% end %>
     </div>
     <div class="flex justify-center">
@@ -88,8 +99,18 @@
   </div>
     <div class="flex justify-center">
       <% unless user_signed_in? %>
-        <%= link_to 'さっそく登録/ログインする！(Google)', user_google_oauth2_omniauth_authorize_path, class: "btn btn-primary btn-width50-center" %>
-        <%= link_to 'さっそく登録/ログインする！(X)', user_twitter_omniauth_authorize_path, class: "btn btn-primary btn-width50-center" %>
+        <div class="flex flex-col">
+          <div class="flex justify-center">
+            <%= link_to user_google_oauth2_omniauth_authorize_path do %>
+              <%= image_tag "web_light_rd_SI@1x" %>
+            <% end %>
+          </div>
+          <div class="flex justify-center">
+            <%= link_to user_twitter_omniauth_authorize_path, class: "btn btn-width50-center rounded-full bg-white text-black hover:bg-white" do %>
+              <%= image_tag "x-logo-black", size: "20x20" %>Sign in with X
+            <% end %>
+          </div>
+        </div>
       <% end %>
     </div>
 </div>

@@ -21,6 +21,13 @@
     <%= form.text_area :content, class: "textarea textarea-bordered" %>
   </div>
 
+  <% if user_signed_in? %>
+  <div>
+    <%= form.label :open, style: "display: block" %>
+    <%= form.check_box :open %>
+  </div>
+  <% end %>
+
   <div>
     <%= form.submit %>
   </div>
