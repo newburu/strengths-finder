@@ -1,8 +1,8 @@
 <%= render @user %>
 
 <div>
-  <%= link_to "Edit this user", edit_user_path(@user) %> |
-  <%= link_to "Back to users", users_path %>
+  <%= link_to t("btn.edit"), edit_user_path(@user), class: "btn btn-primary rounded-md" %>
+  <%= link_to t("btn.back"), users_path, class: "btn btn-primary rounded-md" %>
 
-  <%= button_to "Destroy this user", @user, method: :delete %>
+  <%= link_to t("btn.destroy"), @user, data: { "turbo-method": :delete, "turbo-confirm": t("confirm.destroy")}, class: "btn btn-warning rounded-md" %>
 </div>
