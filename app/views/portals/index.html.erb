@@ -25,10 +25,10 @@
           <div class="flex flex-row p-1">
             <div class="flex flex-col">
               <div class="article-owner text-xs">
-                <%= "投稿者：#{article.creator_name}さん" %>
+                <%= "#{Article.human_attribute_name(:creator_name)}：#{article.creator_name}さん" %>
               </div>
               <div class="article-created text-xs">
-                <%= "投稿日：#{ l article.created_at}" %>
+                <%= "#{Article.human_attribute_name(:created_at)}：#{ l article.created_at}" %>
               </div>
             </div>
           </div>

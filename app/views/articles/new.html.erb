@@ -1,11 +1,11 @@
-<% content_for :title, "New article" %>
+<% content_for :title, t(".title") %>
 
-<h1>New article</h1>
+<h1><%= t(".title") %></h1>
 
 <%= render "form", article: @article %>
 
 <br>
 
 <div>
-  <%= link_to "Back to articles", articles_path %>
+  <%= link_to t(".btn.back"), articles_path, class: "btn btn-primary rounded-md" %>
 </div>

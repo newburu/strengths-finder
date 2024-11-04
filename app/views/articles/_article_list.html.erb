@@ -1,0 +1,24 @@
+<div class="p-2">
+  <div class="flex flex-row p-1">
+    <div class="indicator">
+      <span class="indicator-item">
+        <%= image_tag "icon/new.gif" if article.new? %>
+      </span>
+      <div class="title p-1 pl-2">
+        <div class="flex flex-col">
+          <%= link_to article.title, article, class: "link link-primary align-bottom", data: { turbo: false } %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="flex flex-row p-1">
+    <div class="flex flex-col">
+      <div class="article-owner text-xs">
+        <%= "#{Article.human_attribute_name(:creator_name)}：#{article.creator_name}さん" %>
+      </div>
+      <div class="article-created text-xs">
+        <%= "#{Article.human_attribute_name(:created_at)}：#{ l article.created_at}" %>
+      </div>
+    </div>
+  </div>
+</div>

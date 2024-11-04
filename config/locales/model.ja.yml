@@ -2,7 +2,7 @@ ja:
   activerecord:
     models:
       user: ユーザー
-      article: 記事
+      article: 投稿
     attributes:
         user:
           id: ID
@@ -17,6 +17,8 @@ ja:
           content: コンテンツ
           open: 公開
           user: 作成者
+          creator_name: 投稿者
+          created_at: 投稿日
   attributes:
     created_at: 作成日
     updated_at: 更新日

@@ -1,22 +1,21 @@
-<div id="<%= dom_id article %>">
-  <p>
-    <strong>Title:</strong>
-    <%= article.title %>
-  </p>
+<div id="<%= dom_id article %>" class="card bg-base-100 w-96 shadow-xl">
+  <div class="card-body">
+    <h2 class="card-title"><%= article.title %></h2>
 
-  <p>
-    <strong>Content:</strong>
-    <%= article.content %>
-  </p>
+    <%= label_tag Article.human_attribute_name(:content) %>
+    <div>
+      <%= article.content %>
+    </div>
 
-  <p>
-    <strong>Open:</strong>
-    <%= article.open %>
-  </p>
+    <%= label_tag Article.human_attribute_name(:open) %>
+    <div>
+      <%= article.open %>
+    </div>
 
-  <p>
-    <strong>User:</strong>
-    <%= article.creator_name %>
-  </p>
+    <%= label_tag Article.human_attribute_name(:creator_name) %>
+    <div>
+      <%= article.creator_name %>さん
+    </div>
 
+  </div>
 </div>

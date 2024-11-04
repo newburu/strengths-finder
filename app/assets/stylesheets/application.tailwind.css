@@ -33,6 +33,10 @@
   color: #5ab9ff; /*アイコン色*/
 }
 
+h1 {
+  font-size: 1.2em;
+}
+
 h2.check {
   position: relative;
   padding-left: 1.2em;/*アイコン分のスペース*/
