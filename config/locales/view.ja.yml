@@ -7,7 +7,7 @@ ja:
       privacy: プライバシーポリシー
       terms: 利用規約
       faq: よくある質問
-    article: 記事
+    article: 投稿
   users:
     index:
       title: ユーザーリスト
@@ -23,3 +23,12 @@ ja:
         destroy: このユーザーを削除する
     edit:
       title: ユーザーを修正
+  articles:
+    index:
+      title: 投稿一覧
+    new:
+      title: 投稿を追加
+    show:
+      title: 投稿
+    edit:
+      title: 投稿を修正

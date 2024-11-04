@@ -1,0 +1,20 @@
+<div id="<%= dom_id article %>" class="card bg-base-100 w-96 shadow-xl">
+  <div class="card-body">
+    <h2 class="card-title"><%= article.title %></h2>
+
+    <%= label_tag :content %>
+    <div>
+      <%= article.content %>
+    </div>
+
+    <%= label_tag :creator_name %>
+    <div>
+      <%= article.creator_name %>
+    </div>
+
+    <div class="card-actions justify-end">
+      <%= link_to t('btn.show'), article, class: "btn btn-primary", data: { turbo: false } %>
+    </div>
+  </div>
+</div>
+
