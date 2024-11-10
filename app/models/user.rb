@@ -7,7 +7,7 @@ class User < ApplicationRecord
   validates :uid, uniqueness: { scope: :provider }
 
   # ロール
-  enum role: { normal: 0, admin: 1 }
+  enum :role, { normal: 0, admin: 1 }
 
   has_many :user_strengths, -> {order(:no)}, dependent: :destroy
   accepts_nested_attributes_for :user_strengths, allow_destroy: true
