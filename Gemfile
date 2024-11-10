@@ -115,3 +115,6 @@ gem 'omniauth-twitter'
 
 # 認可
 gem 'pundit'
+
+# 論理削除
+gem 'discard', '~> 1.4'

@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles or /articles.json
   def index
-    @articles = Article.open_post(current_user).page(params[:page]).per(10)
+    @articles = Article.open_post(current_user).page(params[:page]).per(10).kept
   end
 
   # GET /articles/1 or /articles/1.json
@@ -52,7 +52,7 @@ class ArticlesController < ApplicationController
 
   # DELETE /articles/1 or /articles/1.json
   def destroy
-    @article.destroy!
+    @article.discard
 
     respond_to do |format|
       format.html { redirect_to articles_url, notice: "Article was successfully destroyed." }

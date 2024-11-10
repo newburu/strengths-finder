@@ -1,4 +1,6 @@
 class Article < ApplicationRecord
+  include Discard::Model
+    
   belongs_to :creator, class_name: 'User', optional: true
 
   # NEW表示しておく日数
@@ -6,7 +8,6 @@ class Article < ApplicationRecord
 
   scope :open_post, -> (user) {where(open: true).or(Article.where(creator: user)).order(created_at: :desc)}
   scope :new_post, -> (user) {open_post(user).where(created_at: (DateTime.now - NEW_INTERVAL_DAY)...)}
-
 
   # 新着情報か？
   def new?
