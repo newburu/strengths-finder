@@ -3,6 +3,6 @@ class PortalsController < ApplicationController
 
   def index
     # 新着情報
-    @new_articles = Article.new_post(current_user)
+    @new_articles = Article.new_post(current_user).kept
   end
 end
