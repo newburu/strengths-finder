@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles or /articles.json
   def index
-    @articles = Article.open_post(current_user)
+    @articles = Article.open_post(current_user).page(params[:page]).per(10)
   end
 
   # GET /articles/1 or /articles/1.json

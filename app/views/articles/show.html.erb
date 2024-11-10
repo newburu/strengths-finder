@@ -1,8 +1,8 @@
 <%= render @article %>
 
 <div>
-  <%= link_to "Edit this article", edit_article_path(@article) %> |
-  <%= link_to "Back to articles", articles_path %>
+  <%= link_to t("btn.edit"), edit_article_path(@article), class: "btn btn-primary rounded-md" %>
+  <%= link_to t("btn.back"), articles_path, class: "btn btn-primary rounded-md" %>
 
-  <%= button_to "Destroy this article", @article, method: :delete %>
+  <%= link_to t("btn.destroy"), @article, data: { "turbo-method": :delete, "turbo-confirm": t("confirm.destroy")}, class: "btn btn-warning rounded-md" %>
 </div>
