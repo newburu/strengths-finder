@@ -9,6 +9,8 @@ class Article < ApplicationRecord
   scope :open_post, -> (user) {where(open: true).or(Article.where(creator: user)).order(created_at: :desc)}
   scope :new_post, -> (user) {open_post(user).where(created_at: (DateTime.now - NEW_INTERVAL_DAY)...)}
 
+  has_rich_text :content
+
   # 新着情報か？
   def new?
     (created_at + NEW_INTERVAL_DAY) > DateTime.now
